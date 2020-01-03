@@ -1,0 +1,35 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##bcftoolsVersion=1.9+htslib-1.9
+##bcftoolsCommand=mpileup --threads 8 -f ref.fa -Q 3 -Ou test.bam
+##reference=file://ref.fa
+##contig=<ID=AY988601.1,length=18252>
+##ALT=<ID=*,Description="Represents allele(s) other than observed.">
+##INFO=<ID=INDEL,Number=0,Type=Flag,Description="Indicates that the variant is an INDEL.">
+##INFO=<ID=IDV,Number=1,Type=Integer,Description="Maximum number of reads supporting an indel">
+##INFO=<ID=IMF,Number=1,Type=Float,Description="Maximum fraction of reads supporting an indel">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Raw read depth">
+##INFO=<ID=VDB,Number=1,Type=Float,Description="Variant Distance Bias for filtering splice-site artefacts in RNA-seq data (bigger is better)",Version="3">
+##INFO=<ID=RPB,Number=1,Type=Float,Description="Mann-Whitney U test of Read Position Bias (bigger is better)">
+##INFO=<ID=MQB,Number=1,Type=Float,Description="Mann-Whitney U test of Mapping Quality Bias (bigger is better)">
+##INFO=<ID=BQB,Number=1,Type=Float,Description="Mann-Whitney U test of Base Quality Bias (bigger is better)">
+##INFO=<ID=MQSB,Number=1,Type=Float,Description="Mann-Whitney U test of Mapping Quality vs Strand Bias (bigger is better)">
+##INFO=<ID=SGB,Number=1,Type=Float,Description="Segregation based metric.">
+##INFO=<ID=MQ0F,Number=1,Type=Float,Description="Fraction of MQ0 reads (smaller is better)">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="List of Phred-scaled genotype likelihoods">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##INFO=<ID=ICB,Number=1,Type=Float,Description="Inbreeding Coefficient Binomial test (bigger is better)">
+##INFO=<ID=HOB,Number=1,Type=Float,Description="Bias in the number of HOMs number (smaller is better)">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=DP4,Number=4,Type=Integer,Description="Number of high-quality ref-forward , ref-reverse, alt-forward and alt-reverse bases">
+##INFO=<ID=MQ,Number=1,Type=Integer,Description="Average mapping quality">
+##bcftools_callVersion=1.9+htslib-1.9
+##bcftools_callCommand=call --threads 8 -mv -o test.vcf -; Date=Tue Dec 24 09:32:17 2019
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	sample1
+ref	2	.	G	A	228	.	DP=9;VDB=0.000651286;SGB=-0.693147;RPB=1;MQB=1;MQSB=0.110884;BQB=1;MQ0F=0;AC=2;AN=2;DP4=0,0,5,4;MQ=50	GT:PL	1/1:255,186,0
+ref	5	.	A	G	228	.	DP=9;VDB=8.46862e-16;SGB=-0.693147;RPB=0.150569;MQB=0.973229;MQSB=0.734495;BQB=0.0159094;MQ0F=0;AC=2;AN=2;DP4=0,0,5,4;MQ=50	GT:PL	1/1:255,172,0
+ref	7	.	A	ATTT	228	.	INDEL;IDV=10;IMF=0.7;DP=10;VDB=0.0267361;SGB=-0.693147;MQSB=0.876881;MQ0F=0;AC=2;AN=2;DP4=2,1,3,4;MQ=59	GT:PL	1/1:255,23,0
+ref	12	.	G	A	228	.	DP=9;VDB=0.00254082;SGB=-0.693147;RPB=0.969607;MQB=0.995844;MQSB=0.912303;BQB=0.032195;MQ0F=0;AC=2;AN=2;DP4=0,0,3,6;MQ=59	GT:PL	1/1:255,255,0
+ref	14	.	G	A	228	.	DP=9;VDB=0.00896181;SGB=-0.693147;RPB=0.856557;MQB=0.991803;MQSB=0.985058;BQB=0.45082;MQ0F=0;AC=2;AN=2;DP4=0,0,6,3;MQ=59	GT:PL	1/1:255,255,0
+ref	16	.	C	T	228	.	DP=9;VDB=0.00870968;SGB=-0.693147;RPB=0.290259;MQB=0.999213;MQSB=0.985712;BQB=0.00209047;MQ0F=0;AC=2;AN=2;DP4=0,0,5,4;MQ=59	GT:PL	1/1:255,255,0
